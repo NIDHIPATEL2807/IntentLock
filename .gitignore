@@ -1,0 +1,53 @@
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# ── Virtual environment ───────────────────────────────────────────────────────
+venv/
+env/
+ENV/
+.venv/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+secrets.json
+
+# ── Large model binaries — track .pkl via Git LFS or regenerate with train_classifier.py
+# models/*.pkl   ← commented out: .pkl is small enough (~200KB) to commit directly
+models/*.bin
+models/*.pt
+models/*.onnx
+models/*.safetensors
+
+# ── Generated data — regenerate with batch_generator.py
+# backend/data/agentic_fraud_telemetry.parquet  ← commit this so judges can run without regenerating
+backend/data/raw_catalogs/*
+!backend/data/raw_catalogs/.gitkeep
+
+# ── Scratch / dev scripts (used during build, not needed by judges) ───────────
+_spotcheck.py
+_api_test.py
+_heldout_test.py
+dump.md
+
+# ── Logs and temp ─────────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+*.sqlite3
+
+# ── OS generated ──────────────────────────────────────────────────────────────
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.user
+*.suo
